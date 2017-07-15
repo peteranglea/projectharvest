@@ -1,0 +1,57 @@
+/**
+ * Base styles
+ */
+
+$base-font-size: 22px;
+
+$primary-font-stack: Lato, Helvetica, Arial, sans-serif;
+$primary-text-color: #30363a;
+
+$secondary-font-stack: Lora, Georgia, Times, serif;
+
+$primary-link-color: #00b5ef;
+$primary-link-hover-color: #00a4dc;
+
+
+body {
+	font-family: $primary-font-stack;
+	font-size: $base-font-size;
+	line-height: 1.5em;
+	color: $primary-text-color;
+}
+
+.constraint {
+	width: 90%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 1em;
+	position: relative;
+}
+
+a {
+	color: $primary-link-color;
+	text-decoration: underline;
+
+	&:hover {
+		color: $primary-link-hover-color;
+	}
+}
+
+h1 {
+	font-weight: 600;
+	font-size: 1.75em;
+	line-height: 1.25em;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.35em;
+}
+
+p {
+	line-height: 1.5em;
+	margin-bottom: 1.5em;
+}
+.no-js .no-js-hide {
+	display: none;
+}
