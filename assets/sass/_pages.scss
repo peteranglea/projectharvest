@@ -1,19 +1,41 @@
 .scripture {
 	background-color: #ffffff;
 	color: initial;
-	padding: 1.5em;
+	padding: 1.0em;
 	box-shadow: 0px 3px 12px rgba(0,0,0,0.25);
-	margin: 1.5em 0;
+	margin: 1.5em -1em;
+	font-size: 0.85em;
 	font-family: $secondary-font-stack;
+
+	@media (min-width: 450px) {
+		padding: 1.5em;
+		margin: 1.5em 0;
+		font-size: 1em;
+	}
 
 	p {
 		margin-bottom: 0;
 	}
 }
 
+#scrub {
+    height: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.scrub-progress {
+    height: 100%;
+    background: #4CAF50;
+    width: 0px;
+    box-shadow: 0px 0px 8px #4CAF50;
+}
+
 .highlight1,
 .highlight2,
-.highlight3 {
+.highlight3,
+.highlight4 {
 	padding: 3px 2px;
 	margin: 0 -2px;
 }
@@ -26,44 +48,50 @@
 .highlight3 {
 	background: #a92e17;
 }
+.highlight4 {
+	background: #F44336;
+}
 .faded {
 	opacity: 0.35;
 }
 
-.question {
+.question p {
     position: relative;
+    margin-left: 70px;
 }
 
 .question .constraint::before {
-    content: "";
-    display: block;
+	content: "?";
+    display: inline-block;
     width: 50px;
     height: 50px;
     position: absolute;
-    background: rgb(255, 255, 255);
-    transform: rotate(-45deg);
-    left: -70px;
-    top: 0;
-    transform-origin: top right;
-    /* box-shadow: -13px -13px 0 rgba(0,0,0,0.85); */
-    /* background-color: white; */
+    background: white;
+    left: 23px;
+    top: 13px;
+    color: #000;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 1rem;
 }
+.question .constraint {
+	padding-bottom: 3em;
 
-.question .constraint::after {
-    content: "";
-    width: 100%;
-    height: 70.71px;
-    background: rgb(255, 255, 255);
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: calc(-100% + -21px);
+	&::after {
+	    content: "";
+	    position: absolute;
+	    top: 65px;
+	    left: 45px;
+	    border-left: 4px dotted #ffffff;
+	    height: calc(100% - 65px);
+	}
 }
-
 
 .page {
-	padding: 4rem 0;
+	padding: 4rem 0 0;
 }
 
 
@@ -75,20 +103,66 @@
 	
 	h1 {
 	    text-align: left;
-	    font-size: 5vw;
+	    font-size: 13vw;
 	    font-weight: bold;
-	    max-width: 40vw;
-	    margin: 30vh 0 1em;
+	    margin: 25vh 0 1em;
+
+	    @media (min-width: 550px) {
+	    	font-size: 10vw;
+	    }
+	    @media (min-width: 850px) {
+	    	font-size: 3.5em;
+	    	width: 650px;
+	    }
+	}
+
+	.question .constraint {
+		&::before {
+			background: #fffcf3;
+		}
+		&::after {
+			border-color: #fffcf3;
+		}
 	}
 }
 #page2 {
 	background-color: #fffcf3;
+
+	.question .constraint {
+		&::before {
+			background: #FFF8E1;
+		}
+		&::after {
+			border-color: #FFF8E1;
+		}
+	}
 }
 #page3 {
 	background-color: #FFF8E1;
+
+
+	.question .constraint {
+		&::before {
+			background: #FFECB3;
+		}
+		&::after {
+			border-color: #FFECB3;
+		}
+	}
 }
 #page4 {
 	background-color: #FFECB3;
+
+
+	.question .constraint {
+		&::before {
+			background: #131526;
+			color: #ffffff;
+		}
+		&::after {
+			border-color: #131526;
+		}
+	}
 }
 #page5 {
     background: #131526;
@@ -98,28 +172,93 @@
     	background: #2a3948;
     	color: #ccd0d5;
     }
+
+    .question .constraint {
+		&::before {
+			background: #841124;
+			color: #fff;
+		}
+		&::after {
+			border-color: #841124;
+		}
+	}
 }
 #page6 {
-	background: linear-gradient(#F1F8E9,#DCEDC8);
+	background: #841124; 
+    color: #fff;
+
+    .question .constraint {
+		&::before {
+			background: #A5D6A7;
+		}
+		&::after {
+			border-color: #A5D6A7;
+		}
+	}
 }
 #page7 {
     background: linear-gradient(#A5D6A7, #DCEDC8);
+    .question .constraint {
+		&::before {
+			background: #C5E1A5;
+		}
+		&::after {
+			border-color: #C5E1A5;
+		}
+	}
 }
 
 #page8 {
     background: linear-gradient(#C5E1A5, #AED581);
+
+    .question .constraint {
+		&::before {
+			background: #b2ebf2;
+		}
+		&::after {
+			border-color: #b2ebf2;
+		}
+	}
 }
 
 #page9 {
     background: #b2ebf2;
+
+    .question .constraint {
+		&::before {
+			background: #80DEEA;
+		}
+		&::after {
+			border-color: #80DEEA;
+		}
+	}
 }
 
 #page10 {
     background: #80DEEA;
+
+    .question .constraint {
+		&::before {
+			background: #FFF9C4;
+		}
+		&::after {
+			border-color: #FFF9C4;
+		}
+	}
 }
 
 #page11 {
     background: linear-gradient(#FFF9C4,#FFF59D);
+
+    .question .constraint {
+		&::before {
+			background: #E53935;
+			color: #ffffff;
+		}
+		&::after {
+			border-color: #E53935;
+		}
+	}
 }
 
 #page12 {
