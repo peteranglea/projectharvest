@@ -14,7 +14,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 strong { font-weight: 600; }
 em { font-style: italic; }
 textarea { font-family: inherit; }
-sub { font-size: 0.7em; vertical-align: text-bottom;	line-height: 1em; }
+sub { font-size: 0.7em; vertical-align: baseline; opacity: 0.5; }
 sup { font-size: 0.7em; vertical-align: text-top; line-height: 1em; }
 small { font-size: 0.8em; }
 img { max-width: 100%; border: none; vertical-align: bottom; -ms-interpolation-mode: bicubic; }

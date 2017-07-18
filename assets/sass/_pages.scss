@@ -133,8 +133,8 @@ blockquote.prayer::before {
 
 
 #page1 {
-	background: #202020 url('../assets/images/space.jpg');
-	min-height: 100vh;
+	background: #202020 url('../assets/images/space.jpg') center no-repeat;
+	background-size: cover;
 	color: #ffffff;
 	position: relative;
 	

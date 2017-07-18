@@ -47,8 +47,8 @@ textarea {
 
 sub {
   font-size: 0.7em;
-  vertical-align: text-bottom;
-  line-height: 1em; }
+  vertical-align: baseline;
+  opacity: 0.5; }
 
 sup {
   font-size: 0.7em;
@@ -226,8 +226,8 @@ blockquote.prayer::before {
   padding: 4rem 0 0; }
 
 #page1 {
-  background: #202020 url("../assets/images/space.jpg");
-  min-height: 100vh;
+  background: #202020 url("../assets/images/space.jpg") center no-repeat;
+  background-size: cover;
   color: #ffffff;
   position: relative; }
   #page1 h1 {
