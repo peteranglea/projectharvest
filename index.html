@@ -290,5 +290,17 @@
 		<p>Telephone: +1 (864) 380-8352</p>
 	</div>
 </footer>
+
+<script>
+// update scrub bar on scroll
+function updateScrub() {
+	var body = document.querySelector('body');
+	var scrub = document.querySelector('.scrub-progress');
+	var distance = body.scrollHeight - window.innerHeight;
+	var percentage = (window.scrollY / distance) * 100;
+	scrub.style.width = percentage + "%";
+}
+window.onscroll = function() { updateScrub() }
+</script>
 </body>
 </html>
