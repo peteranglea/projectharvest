@@ -110,7 +110,7 @@ p {
 .no-js .no-js-hide {
   display: none; }
 
-.scripture {
+blockquote.scripture {
   background-color: #ffffff;
   color: initial;
   padding: 1.0em;
@@ -119,12 +119,24 @@ p {
   font-size: 0.85em;
   font-family: Lora, Georgia, Times, serif; }
   @media (min-width: 450px) {
-    .scripture {
+    blockquote.scripture {
       padding: 1.5em;
       margin: 1.5em 0;
       font-size: 1em; } }
-  .scripture p {
+  blockquote.scripture p {
     margin-bottom: 0; }
+
+blockquote.prayer {
+  font-style: italic;
+  margin-left: 1.5em;
+  position: relative; }
+
+blockquote.prayer::before {
+  content: "\0201c";
+  position: absolute;
+  left: -1.75rem;
+  top: .5rem;
+  font-size: 2em; }
 
 #scrub {
   height: 5px;
@@ -141,7 +153,9 @@ p {
 .highlight1,
 .highlight2,
 .highlight3,
-.highlight4 {
+.highlight4,
+.highlight5,
+.highlight6 {
   padding: 3px 2px;
   margin: 0 -2px; }
 
@@ -157,27 +171,35 @@ p {
 .highlight4 {
   background: #F44336; }
 
+.highlight5 {
+  background: #A5D6A7;
+  color: #30363a; }
+
+.highlight6 {
+  background: #009688; }
+
 .faded {
   opacity: 0.35; }
 
 .question p {
   position: relative;
-  margin-left: 70px; }
+  margin-left: 90px;
+  font-weight: bold; }
 
 .question .constraint::before {
   content: "?";
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   position: absolute;
   background: white;
-  left: 23px;
-  top: 13px;
+  left: 22px;
+  top: 0px;
   color: #000;
   border-radius: 100%;
   text-align: center;
-  line-height: 50px;
-  font-size: 25px;
+  line-height: 75px;
+  font-size: 35px;
   font-weight: bold;
   margin-right: 1rem; }
 
@@ -187,9 +209,18 @@ p {
     content: "";
     position: absolute;
     top: 65px;
-    left: 45px;
-    border-left: 4px dotted #ffffff;
+    left: 58px;
+    border-left: 6px dotted #ffffff;
     height: calc(100% - 65px); }
+
+.page ul, .page ol {
+  margin: 0 0 1.5em 1em; }
+
+.page ol {
+  list-style: decimal; }
+
+.page ul {
+  list-style: disc; }
 
 .page {
   padding: 4rem 0 0; }
@@ -197,7 +228,8 @@ p {
 #page1 {
   background: #202020 url("../assets/images/space.jpg");
   min-height: 100vh;
-  color: #ffffff; }
+  color: #ffffff;
+  position: relative; }
   #page1 h1 {
     text-align: left;
     font-size: 13vw;
@@ -210,6 +242,16 @@ p {
       #page1 h1 {
         font-size: 3.5em;
         width: 650px; } }
+  #page1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(109, 67, 5, 0.5)); }
+  #page1 .constraint {
+    z-index: 1; }
   #page1 .question .constraint::before {
     background: #fffcf3; }
   #page1 .question .constraint::after {
@@ -218,19 +260,19 @@ p {
 #page2 {
   background-color: #fffcf3; }
   #page2 .question .constraint::before {
-    background: #FFF8E1; }
-  #page2 .question .constraint::after {
-    border-color: #FFF8E1; }
-
-#page3 {
-  background-color: #FFF8E1; }
-  #page3 .question .constraint::before {
     background: #FFECB3; }
-  #page3 .question .constraint::after {
+  #page2 .question .constraint::after {
     border-color: #FFECB3; }
 
-#page4 {
+#page3 {
   background-color: #FFECB3; }
+  #page3 .question .constraint::before {
+    background: #ffb74d; }
+  #page3 .question .constraint::after {
+    border-color: #ffb74d; }
+
+#page4 {
+  background-color: #ffb74d; }
   #page4 .question .constraint::before {
     background: #131526;
     color: #ffffff; }
@@ -260,19 +302,21 @@ p {
 #page7 {
   background: linear-gradient(#A5D6A7, #DCEDC8); }
   #page7 .question .constraint::before {
-    background: #C5E1A5; }
+    background: #AED581; }
   #page7 .question .constraint::after {
-    border-color: #C5E1A5; }
+    border-color: #AED581; }
 
 #page8 {
-  background: linear-gradient(#C5E1A5, #AED581); }
+  background: linear-gradient(#AED581, #C5E1A5); }
   #page8 .question .constraint::before {
-    background: #b2ebf2; }
+    background: #009688;
+    color: #fff; }
   #page8 .question .constraint::after {
-    border-color: #b2ebf2; }
+    border-color: #009688; }
 
 #page9 {
-  background: #b2ebf2; }
+  background: #009688;
+  color: #ffffff; }
   #page9 .question .constraint::before {
     background: #80DEEA; }
   #page9 .question .constraint::after {
@@ -288,18 +332,34 @@ p {
 #page11 {
   background: linear-gradient(#FFF9C4, #FFF59D); }
   #page11 .question .constraint::before {
-    background: #E53935;
+    background: #D32F2F;
     color: #ffffff; }
   #page11 .question .constraint::after {
-    border-color: #E53935; }
+    border-color: #D32F2F; }
 
 #page12 {
-  background: #E53935;
+  background: #D32F2F;
   color: #fff; }
+
+#page13 {
+  background: #222 url("../assets/images/space.jpg") center no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  position: relative; }
+  #page13 .constraint {
+    z-index: 1; }
+  #page13::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 47, 68, 0.5);
+    display: block;
+    position: absolute;
+    top: 0; }
 
 footer {
   padding: 4em 0;
-  background: #222 url("../assets/images/space.jpg");
+  background: #222;
   color: #ccc;
   font-size: 0.8em; }
 

@@ -1,4 +1,4 @@
-.scripture {
+blockquote.scripture {
 	background-color: #ffffff;
 	color: initial;
 	padding: 1.0em;
@@ -18,6 +18,20 @@
 	}
 }
 
+blockquote.prayer {
+    font-style: italic;
+    margin-left: 1.5em;
+    position: relative;
+}
+
+blockquote.prayer::before {
+    content: "\0201c";
+    position: absolute;
+    left: -1.75rem;
+    top: .5rem;
+    font-size: 2em;
+}
+
 #scrub {
     height: 5px;
     position: fixed;
@@ -35,7 +49,9 @@
 .highlight1,
 .highlight2,
 .highlight3,
-.highlight4 {
+.highlight4,
+.highlight5,
+.highlight6 {
 	padding: 3px 2px;
 	margin: 0 -2px;
 }
@@ -51,29 +67,37 @@
 .highlight4 {
 	background: #F44336;
 }
+.highlight5 {
+	background: #A5D6A7;
+	color: $primary-text-color;
+}
+.highlight6 {
+    background: #009688;
+}
 .faded {
 	opacity: 0.35;
 }
 
 .question p {
     position: relative;
-    margin-left: 70px;
+    margin-left: 90px;
+    font-weight: bold;
 }
 
 .question .constraint::before {
 	content: "?";
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     position: absolute;
     background: white;
-    left: 23px;
-    top: 13px;
+    left: 22px;
+    top: 0px;
     color: #000;
     border-radius: 100%;
     text-align: center;
-    line-height: 50px;
-    font-size: 25px;
+    line-height: 75px;
+    font-size: 35px;
     font-weight: bold;
     margin-right: 1rem;
 }
@@ -84,10 +108,22 @@
 	    content: "";
 	    position: absolute;
 	    top: 65px;
-	    left: 45px;
-	    border-left: 4px dotted #ffffff;
+	    left: 58px;
+	    border-left: 6px dotted #ffffff;
 	    height: calc(100% - 65px);
 	}
+}
+
+.page ul, .page ol {
+    margin: 0 0 1.5em 1em;
+}
+
+.page ol {
+    list-style: decimal;
+}
+
+.page ul {
+    list-style: disc;
 }
 
 .page {
@@ -100,6 +136,7 @@
 	background: #202020 url('../assets/images/space.jpg');
 	min-height: 100vh;
 	color: #ffffff;
+	position: relative;
 	
 	h1 {
 	    text-align: left;
@@ -116,6 +153,20 @@
 	    }
 	}
 
+	&::after {
+	    content: "";
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background: linear-gradient(transparent, rgba(109, 67, 5, 0.5));
+	}
+
+	.constraint {
+	    z-index: 1;
+	}
+
 	.question .constraint {
 		&::before {
 			background: #fffcf3;
@@ -130,19 +181,6 @@
 
 	.question .constraint {
 		&::before {
-			background: #FFF8E1;
-		}
-		&::after {
-			border-color: #FFF8E1;
-		}
-	}
-}
-#page3 {
-	background-color: #FFF8E1;
-
-
-	.question .constraint {
-		&::before {
 			background: #FFECB3;
 		}
 		&::after {
@@ -150,8 +188,21 @@
 		}
 	}
 }
-#page4 {
+#page3 {
 	background-color: #FFECB3;
+
+
+	.question .constraint {
+		&::before {
+			background: #ffb74d;
+		}
+		&::after {
+			border-color: #ffb74d;
+		}
+	}
+}
+#page4 {
+	background-color: #ffb74d;
 
 
 	.question .constraint {
@@ -200,29 +251,31 @@
     background: linear-gradient(#A5D6A7, #DCEDC8);
     .question .constraint {
 		&::before {
-			background: #C5E1A5;
+			background: #AED581;
 		}
 		&::after {
-			border-color: #C5E1A5;
+			border-color: #AED581;
 		}
 	}
 }
 
 #page8 {
-    background: linear-gradient(#C5E1A5, #AED581);
+    background: linear-gradient(#AED581, #C5E1A5);
 
     .question .constraint {
 		&::before {
-			background: #b2ebf2;
+			background: #009688;
+			color: #fff;
 		}
 		&::after {
-			border-color: #b2ebf2;
+			border-color: #009688;
 		}
 	}
 }
 
 #page9 {
-    background: #b2ebf2;
+    background: #009688;
+    color: #ffffff;
 
     .question .constraint {
 		&::before {
@@ -252,23 +305,43 @@
 
     .question .constraint {
 		&::before {
-			background: #E53935;
+			background: #D32F2F;
 			color: #ffffff;
 		}
 		&::after {
-			border-color: #E53935;
+			border-color: #D32F2F;
 		}
 	}
 }
 
 #page12 {
-    background: #E53935;
+    background: #D32F2F;
     color: #fff;
+}
+
+#page13 {
+	background: #222 url('../assets/images/space.jpg') center no-repeat;
+	background-size: cover;
+	color: #ffffff;
+	position: relative;
+
+	.constraint {
+		z-index: 1;
+	}
+	&::after {
+	    content: "";
+	    width: 100%;
+	    height: 100%;
+	    background: rgba(3, 47, 68, 0.5);
+	    display: block;
+	    position: absolute;
+	    top: 0;
+	}
 }
 
 footer {
     padding: 4em 0;
-    background: #222 url('../assets/images/space.jpg');
+    background: #222;
     color: #ccc;
     font-size: 0.8em;
 }
